@@ -1,3 +1,3 @@
 # individual_test_cpp
-![alt menu](images/menu.png)
+![alt menu](images/window1.png)
 Menu
