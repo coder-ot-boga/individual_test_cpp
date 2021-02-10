@@ -1,5 +1,6 @@
-﻿#include <iostream>
+#include <iostream>
 #include <ctime>
+#include <algorithm> //  swap
 using namespace std;
 
 int main()
@@ -106,12 +107,39 @@ int main()
 		}
 		case 27:
 		{
-			//cpp.dp.ua/sortuvannya-masyviv/
+			cout << "\t\tZadorko Volodymyr 282 group\n";
+			cout << "Заданi два масива дiйсних значень з N та M елементiв, якi упорядкованi за збiльшенням. \nУтворити упорядкований за збiльшенням масив з N + M елементiв заданих масивiв\n";
+			
+			const int length = 5;
+			int array[length] = { 30, 50, 20, 10, 40 };
+
+			for (int i = 0; i < length; i++)
+			{
+				cout << array[i] << " Исходные значения массива" << "\n\n";
+			}
+				
+			for (int startIndex = 0; startIndex < length - 1; ++startIndex)
+			{					
+				int smallestIndex = startIndex;
+
+					
+				for (int currentIndex = startIndex + 1; currentIndex < length; ++currentIndex)
+				{
+					if (array[currentIndex] < array[smallestIndex])
+					{
+						smallestIndex = currentIndex;
+					}
+				}
+
+				swap(array[startIndex], array[smallestIndex]);
+			}
+
+			for (int index = 0; index < length; ++index)
+				{
+					cout << array[index] << " Результат" << "\n\n";
+				}
 			break;
-		}
-
-
+		}// close case 27
 		}// close switch
 	} // close  else if
 } 
-
