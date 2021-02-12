@@ -1,6 +1,8 @@
 # Задорко Володимир 282гр
 # https://youtu.be/O-BChdO7scU
+Либо зайдите в каталог: media/video.mp4
 # Видео-обзор программы (без звука)
+
 ![alt menu](images/window1.png)
 Старт программы
 
