@@ -7,7 +7,7 @@ int main()
 {
 	int c = 0;
 	srand(time(NULL));
-	setlocale(LC_ALL, "RUS");
+	setlocale(LC_ALL, "");
 	do
 	{
 		cout << "Работу выполнил Задорко Владимир 282гр\n";
@@ -152,12 +152,92 @@ int main()
 			{
 			case 41:
 			{
+				cout << "\tОбчислити суму елементів матриці, величина яких не перевишує 2,5.\n";
+				
+				const int raw = 5;
+				const int col = 5;
+				int j;
+				int k = 0;
+				int arr[raw][col]{};
+
+				for (int i = 0; i < raw; i++)
+				{
+					for (j = 0; j < col; j++)
+					{
+						arr[i][j] = rand() % 10;
+						cout << arr[i][j] << "\t";
+						if (arr[i][j] < 2.5)
+							k++;
+					}
+					cout << endl; 
+
+				}
+				cout << k << " = element's < 2,5\n";
+
 				break;
 			}// close case 41
-
+			case 44:
+			{
+				cout << "Визначити кількість від'ємних елементів матриці\n";
+				const int raw = 3;
+				const int col = 3;
+				int min_v1 = 0;
+				int arr[raw][col]{};
+				for (int i = 0; i < raw; i++)
+				{
+					for (int j = 0; j < col; j++)
+					{
+						arr[i][j] = -5 + rand() % 20;
+						cout << arr[i][j] << "\t";
+						if (arr[i][j] < 0)
+							min_v1++;
+					}
+					
+					cout << endl;
+				}
+				cout << "количество отрицательных чисел " << min_v1;
+			}//case 44
 			}// close switch
 
 		} // close else if
+		else if (result == 12)
+		{
+			cout << "Доступны Задачи № 51 \nНапишите соответсвующую цифру: ";
+			cin >> res_1;
+			switch (res_1)
+			{
+				case 51:
+				{
+					cout << "Визначити номери рядків матриці, які мають хоча б один від'ємний елемент\n";
+					const int row = 3;
+					const int col = 3;
+					int m = 0;
+					//int k = 0;
+					int arr[row][col]{};
+					for (int i = 0; i < 4; i++)
+					{
+						for (int j = 0; j < 3; j++)
+						{
+							arr[i][j] = -4 + rand() % 10;
+							cout << arr[i][j] << "\t";
+							if (arr[i][j] < 0)
+							{
+								m = 1;
+								
+							}
+						}
+						if (m == 1)
+						{
+							
+							m = 0;
+							cout << i;
+						}
+						cout << endl;
+					}
+					break;
+				}//case 51
+			}//switch
+		}//else if
 		cout << "\nНужно остаться в программе и посмотреть другие работы?\nНажмите: \n\t1. для возвращения в главное меню\n\t2. Для выхода из всей программы!: ";
 		cin >> c;
 	} while (c == 1);
